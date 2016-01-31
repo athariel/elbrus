@@ -1,0 +1,51 @@
+#main-nav-bg
+%nav#main-nav
+  .navigation
+
+    / search form visible on phone
+    .search
+      %form{action: "search_results.html", method: "get"}
+        .search-wrapper
+          %input.search-query.form-control{value: "", placeholder: "Search...", autocomplete: "off", name:"q", type: "text"}
+          %button.btn.btn-link.icon-search{name: "button", type:"submit"}>
+
+    / navigation items
+    %ul.nav.nav-stacked
+
+      / single navigation item
+      %li.active
+        = link_to products_path do
+          %i.icon-dashboard
+          %span Dashboard
+
+      / four level dropdown
+      %li
+        %a.dropdown-collapse{href: "#"}
+          %i.icon-folder-open-alt
+          %span Four level dropdown
+          %i.icon-angle-down.angle-down
+        %ul.nav.nav-stacked
+          %li
+            %a.dropdown-collapse{href: "#"}
+              %i.icon-caret-right
+              %span Second level single
+          %li
+            %a.dropdown-collapse{href: "#"}
+              %i.icon-caret-right
+              %span Second level
+              %i.icon-angle-down.angle-down
+            %ul.nav.nav-stacked
+              %li
+                %a.dropdown-collapse{href: "#"}
+                  %i.icon-caret-right
+                  %span Third level
+                  %i.icon-angle-down.angle-down
+                %ul.nav.nav-stacked
+                  %li
+                    %a{href: "#"}
+                      %i.icon-caret-right
+                      %span Fourth level
+                  %li
+                    %a{href: "#"}
+                      %i.icon-caret-right
+                      %span Another fourth level

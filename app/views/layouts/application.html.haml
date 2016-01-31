@@ -1,0 +1,45 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "", :name => "description"}/
+    %meta{:content => "", :name => "author"}/
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}
+
+    %title Elbrus Diet
+    = favicon_link_tag 'favicon.ico'
+    = stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    /[if lt IE 9]
+      = javascript_include_tag 'html5shiv'
+      = javascript_include_tag 'respond'
+  %body.contrast-grass-green
+    = render 'layouts/header'
+    #wrapper
+      = render 'layouts/navbar'
+      %section#content
+        .container
+          .row#content-wrapper
+            .col-xs-12
+              / page header container
+              .row
+                .col-sm-12
+                  .page-header
+                    /  page title
+                    %h1.pull-left
+                      %i.icon-th
+                      %span Grid
+                    / breadcrumbs
+                    .pull-right
+                      %ul.breadcrumb
+                        %li
+                          = link_to root_path do
+                            %i.icon-bar-chart
+                        %li.separator
+                          %i.icon-angle-right
+                        %li.active Grid
+                = yield

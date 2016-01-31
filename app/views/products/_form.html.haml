@@ -1,0 +1,31 @@
+= form_for @product do |f|
+  - if @product.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@product.errors.count, "error")} prohibited this product from being saved:"
+      %ul
+        - @product.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :standard_measure
+    = f.text_field :standard_measure
+  .field
+    = f.label :calories
+    = f.text_field :calories
+  .field
+    = f.label :carbohydrate
+    = f.text_field :carbohydrate
+  .field
+    = f.label :protein
+    = f.text_field :protein
+  .field
+    = f.label :fat
+    = f.text_field :fat
+  .field
+    = f.label :roughage
+    = f.text_field :roughage
+  .actions
+    = f.submit 'Save'

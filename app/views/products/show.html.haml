@@ -1,0 +1,27 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @product.name
+%p
+  %b Standard measure:
+  = @product.standard_measure
+%p
+  %b Calories:
+  = @product.calories
+%p
+  %b Carbohydrate:
+  = @product.carbohydrate
+%p
+  %b Protein:
+  = @product.protein
+%p
+  %b Fat:
+  = @product.fat
+%p
+  %b Roughage:
+  = @product.roughage
+
+= link_to 'Edit', edit_product_path(@product)
+\|
+= link_to 'Back', products_path
