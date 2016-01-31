@@ -45,7 +45,11 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+gem 'pg'
+
 gem 'compass-rails'
 gem 'haml-rails'
 gem 'bootstrap_form'
+
+ruby "2.2.4"
 
