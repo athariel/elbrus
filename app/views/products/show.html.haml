@@ -1,6 +1,8 @@
 - content_for :page_header do
   =t '.title', :default => Product.model_name.human.titleize
 
+= flash_messages
+
 %p
   %strong= Product.human_attribute_name(:name) + ':'
   %br

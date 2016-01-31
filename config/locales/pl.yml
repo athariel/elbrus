@@ -35,5 +35,37 @@ pl:
       ingredient:
         amount: Ilość
 
+  date:
+    formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
+      default: "%d-%m-%Y"
+      short: "%b %d"
+      medium: "%d %b %Y"
+      long: "%B %d, %Y"
 
+    day_names: [Niedziela, Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota]
+    abbr_day_names: [Nie, Pon, Wt, Śr, Czw, Pt, Sob]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
+    abbr_month_names: [~, Sty, Lut, Mar, Kwi, Maj, Cze, Lip, Sie, Wrz, Paź, Lis, Gru]
+    # Used in date_select and datetime_select.
+    order:
+      - year
+      - month
+      - day
+
+  time:
+    formats:
+      default: "%a, %d %b %Y %H:%M:%S"
+      short: "%d/%m/%Y %H:%M"
+      long: "%A, %d %B %Y %H:%M"
+      date_only_short: "%d/%m/%Y"
+      date_only_long: "%A, %d %B %Y"
+      time_only_short: "%H:%M"
+      time_only_long: "%H:%M:%S"
+    am: "am"
+    pm: "pm"
 
