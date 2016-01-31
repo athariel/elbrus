@@ -50,6 +50,8 @@ gem 'pg'
 gem 'compass-rails'
 gem 'haml-rails'
 gem 'bootstrap_form'
+gem 'rollbar'
+gem 'oj'
 
 ruby "2.2.4"
 
