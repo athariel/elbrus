@@ -16,7 +16,7 @@
     / dropdowns
     %ul.nav
       / dark dropdown & user menu
-      %li.dropdown.dark.user-menu
+      %li.dropdown.light.user-menu
         %a.dropdown-toggle{:'data-toggle' => "dropdown", href: "#"}
           %span.user-name
             = current_user.email
@@ -24,6 +24,6 @@
 
         %ul.dropdown-menu
           %li
-            = link_to destroy_user_session_path, :method => :delete do
+            = link_to destroy_user_session_path do
               %i.icon-signout
               Wyloguj
