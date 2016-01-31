@@ -11,7 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160131125331) do
+ActiveRecord::Schema.define(version: 20160131161732) do
+
+  create_table "dishes", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "ingredients", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "measurement_id"
+    t.decimal  "amount"
+    t.integer  "dish_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
+
+  add_index "ingredients", ["dish_id"], name: "index_ingredients_on_dish_id"
+  add_index "ingredients", ["measurement_id"], name: "index_ingredients_on_measurement_id"
+  add_index "ingredients", ["product_id"], name: "index_ingredients_on_product_id"
+
+  create_table "measurements", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "product_id"
+    t.decimal  "ratio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "measurements", ["product_id"], name: "index_measurements_on_product_id"
 
   create_table "products", force: :cascade do |t|
     t.string   "name"

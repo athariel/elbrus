@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
+  resources :ingredients
+  resources :dishes
+  resources :measurements
   resources :products
-  resources :products
+
   root 'products#index'
-  resources :products
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

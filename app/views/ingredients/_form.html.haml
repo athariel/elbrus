@@ -1,0 +1,25 @@
+= form_for @ingredient, html: { class: "form form-horizontal ingredient" } do |f|
+  .form-group
+    = f.label :product_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :product_id, class: 'form-control', required: true
+    = f.error_span(:product_id)
+  .form-group
+    = f.label :measurement_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :measurement_id, class: 'form-control', required: true
+    = f.error_span(:measurement_id)
+  .form-group
+    = f.label :amount, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :amount, class: 'form-control', required: true
+    = f.error_span(:amount)
+  .form-group
+    = f.label :dish_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :dish_id, class: 'form-control', required: true
+    = f.error_span(:dish_id)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil,class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), ingredients_path, :class => 'btn btn-default'

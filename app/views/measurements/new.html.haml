@@ -1,0 +1,3 @@
+- content_for :page_header do
+  =t '.title', :default => [:'helpers.titles.new', 'New %{model}'], :model => Measurement.model_name.human.titleize
+= render :partial => "form"

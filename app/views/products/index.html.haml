@@ -1,22 +1,22 @@
-%h1 Listing products
-
-%table
+- content_for :page_header do
+  =t '.title', :default => Product.model_name.human(count: 2).titleize
+%table.table.table-striped
   %thead
     %tr
-      %th Name
-      %th Standard measure
-      %th Calories
-      %th Carbohydrate
-      %th Protein
-      %th Fat
-      %th Roughage
-      %th
-      %th
-      %th
-
+      %th= Product.human_attribute_name(:id)
+      %th= Product.human_attribute_name(:name)
+      %th= Product.human_attribute_name(:standard_measure)
+      %th= Product.human_attribute_name(:calories)
+      %th= Product.human_attribute_name(:carbohydrate)
+      %th= Product.human_attribute_name(:protein)
+      %th= Product.human_attribute_name(:fat)
+      %th= Product.human_attribute_name(:roughage)
+      %th= Product.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
   %tbody
     - @products.each do |product|
       %tr
+        %td= link_to product.id, product_path(product)
         %td= product.name
         %td= product.standard_measure
         %td= product.calories
@@ -24,10 +24,9 @@
         %td= product.protein
         %td= product.fat
         %td= product.roughage
-        %td= link_to 'Show', product
-        %td= link_to 'Edit', edit_product_path(product)
-        %td= link_to 'Destroy', product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td=l product.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_product_path(product), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), product_path(product), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
 
-%br
-
-= link_to 'New Product', new_product_path
+= link_to t('.new', :default => t("helpers.links.new")), new_product_path, :class => 'btn btn-primary'
