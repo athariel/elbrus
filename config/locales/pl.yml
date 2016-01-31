@@ -1,13 +1,4 @@
 pl:
-  helpers:
-    actions: Akcje
-    titles:
-      new: "Dodaj %{model}"
-      edit: "Edytuj %{model}"
-    links:
-      cancel: Anuluj
-      new: Dodaj
-
   attributes:
     created_at: Data utworzenia
     updated_at: Data modyfikacji
