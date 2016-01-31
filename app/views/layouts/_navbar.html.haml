@@ -2,50 +2,30 @@
 %nav#main-nav
   .navigation
 
-    / search form visible on phone
-    .search
-      %form{action: "search_results.html", method: "get"}
-        .search-wrapper
-          %input.search-query.form-control{value: "", placeholder: "Search...", autocomplete: "off", name:"q", type: "text"}
-          %button.btn.btn-link.icon-search{name: "button", type:"submit"}>
-
     / navigation items
     %ul.nav.nav-stacked
 
       / single navigation item
-      %li.active
+      %li{class: "#{'active' if controller_name.to_sym.in?([:products])}"}
         = link_to products_path do
-          %i.icon-dashboard
-          %span Dashboard
+          %i.icon-shopping-cart
+          %span
+            = Product.model_name.human(count: 2).titleize
 
-      / four level dropdown
-      %li
-        %a.dropdown-collapse{href: "#"}
-          %i.icon-folder-open-alt
-          %span Four level dropdown
-          %i.icon-angle-down.angle-down
-        %ul.nav.nav-stacked
-          %li
-            %a.dropdown-collapse{href: "#"}
-              %i.icon-caret-right
-              %span Second level single
-          %li
-            %a.dropdown-collapse{href: "#"}
-              %i.icon-caret-right
-              %span Second level
-              %i.icon-angle-down.angle-down
-            %ul.nav.nav-stacked
-              %li
-                %a.dropdown-collapse{href: "#"}
-                  %i.icon-caret-right
-                  %span Third level
-                  %i.icon-angle-down.angle-down
-                %ul.nav.nav-stacked
-                  %li
-                    %a{href: "#"}
-                      %i.icon-caret-right
-                      %span Fourth level
-                  %li
-                    %a{href: "#"}
-                      %i.icon-caret-right
-                      %span Another fourth level
+      %li{class: "#{'active' if controller_name.to_sym.in?([:dishes])}"}
+        = link_to dishes_path do
+          %i.icon-food
+          %span
+            = Dish.model_name.human(count: 2).titleize
+
+      %li{class: "#{'active' if controller_name.to_sym.in?([:measurements])}"}
+        = link_to measurements_path do
+          %i.icon-tasks
+          %span
+            = Measurement.model_name.human(count: 2).titleize
+
+      %li{class: "#{'active' if controller_name.to_sym.in?([:ingredients])}"}
+        = link_to ingredients_path do
+          %i.icon-sitemap
+          %span
+            = Ingredient.model_name.human(count: 2).titleize

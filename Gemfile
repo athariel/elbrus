@@ -50,6 +50,7 @@ gem 'devise'
 gem 'compass-rails'
 gem 'haml-rails'
 gem 'bootstrap_form'
+gem "twitter-bootstrap-rails"
 gem 'rollbar'
 gem 'oj'
 

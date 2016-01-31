@@ -1,0 +1,20 @@
+- content_for :page_header do
+  =t '.title', :default => Dish.model_name.human(count: 2).titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= Dish.human_attribute_name(:id)
+      %th= Dish.human_attribute_name(:name)
+      %th= Dish.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @dishes.each do |dish|
+      %tr
+        %td= link_to dish.id, dish_path(dish)
+        %td= dish.name
+        %td=l dish.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_dish_path(dish), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), dish_path(dish), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_dish_path, :class => 'btn btn-primary'

@@ -1,0 +1,48 @@
+pl:
+  helpers:
+    actions: Akcje
+    titles:
+      new: "Dodaj %{model}"
+      edit: "Edytuj %{model}"
+    links:
+      cancel: Anuluj
+      new: Dodaj
+
+  attributes:
+    created_at: Data utworzenia
+    updated_at: Data modyfikacji
+    created_by: Utworzone przez
+    name: Nazwa
+    product_id: Produkt
+    dish_id: Danie
+    measurement_id: Miara
+
+  activerecord:
+    models:
+        product:
+          one: Produkt
+          other: Produkty
+        ingredient:
+          one: Składnik
+          other: Składniki
+        measurement:
+          one: Miara
+          other: Miary
+        dish:
+          one: Danie
+          other: Dania
+    attributes:
+      product:
+        fat: Tłuszcze
+        carbohydrate: Węglowodany
+        protein: Białko
+        roughage: Błonnik
+        calories: Kalorie
+        standard_measure: Miara podstawowa
+      measurement:
+        ratio: Przelicznik
+      ingredient:
+        amount: Ilość
+
+
+

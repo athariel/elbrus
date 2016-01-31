@@ -32,14 +32,6 @@
                     /  page title
                     %h1.pull-left
                       %i.icon-th
-                      %span Grid
-                    / breadcrumbs
-                    .pull-right
-                      %ul.breadcrumb
-                        %li
-                          = link_to root_path do
-                            %i.icon-bar-chart
-                        %li.separator
-                          %i.icon-angle-right
-                        %li.active Grid
+                      %span
+                        = yield(:page_header)
                 = yield

@@ -1,27 +1,36 @@
-%p#notice= notice
+- content_for :page_header do
+  =t '.title', :default => Product.model_name.human.titleize
 
 %p
-  %b Name:
+  %strong= Product.human_attribute_name(:name) + ':'
+  %br
   = @product.name
 %p
-  %b Standard measure:
+  %strong= Product.human_attribute_name(:standard_measure) + ':'
+  %br
   = @product.standard_measure
 %p
-  %b Calories:
+  %strong= Product.human_attribute_name(:calories) + ':'
+  %br
   = @product.calories
 %p
-  %b Carbohydrate:
+  %strong= Product.human_attribute_name(:carbohydrate) + ':'
+  %br
   = @product.carbohydrate
 %p
-  %b Protein:
+  %strong= Product.human_attribute_name(:protein) + ':'
+  %br
   = @product.protein
 %p
-  %b Fat:
+  %strong= Product.human_attribute_name(:fat) + ':'
+  %br
   = @product.fat
 %p
-  %b Roughage:
+  %strong= Product.human_attribute_name(:roughage) + ':'
+  %br
   = @product.roughage
 
-= link_to 'Edit', edit_product_path(@product)
-\|
-= link_to 'Back', products_path
+
+= link_to t('.back', :default => t("helpers.links.back")), products_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_product_path(@product), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), product_path(@product), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

@@ -1,0 +1,24 @@
+- content_for :page_header do
+  =t '.title', :default => Measurement.model_name.human(count: 2).titleize
+%table.table.table-striped
+  %thead
+    %tr
+      %th= Measurement.human_attribute_name(:id)
+      %th= Measurement.human_attribute_name(:name)
+      %th= Measurement.human_attribute_name(:product_id)
+      %th= Measurement.human_attribute_name(:ratio)
+      %th= Measurement.human_attribute_name(:created_at)
+      %th=t '.actions', :default => t("helpers.actions")
+  %tbody
+    - @measurements.each do |measurement|
+      %tr
+        %td= link_to measurement.id, measurement_path(measurement)
+        %td= measurement.name
+        %td= measurement.product_id
+        %td= measurement.ratio
+        %td=l measurement.created_at
+        %td
+          = link_to t('.edit', :default => t("helpers.links.edit")), edit_measurement_path(measurement), :class => 'btn btn-default btn-xs'
+          = link_to t('.destroy', :default => t("helpers.links.destroy")), measurement_path(measurement), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs btn-danger'
+
+= link_to t('.new', :default => t("helpers.links.new")), new_measurement_path, :class => 'btn btn-primary'

@@ -2,7 +2,7 @@
   %nav.navbar.navbar-default
 
     / application logo
-    %a.navbar-brand{:href => "index.html"}
+    %a.navbar-brand{:href => "#{root_path}"}
       / application logo visible on large screens
       = image_tag "flatty/logo.svg", class: "logo", width: '81', height: '21', alt: "Flatty"
       / application logo visible on small screens
@@ -15,16 +15,6 @@
 
     / dropdowns
     %ul.nav
-
-      / light dropdown
-      %li.dropdown.light.only-icon
-        %a.dropdown-toggle{:'data-toggle' => "dropdown", href: "#"}
-
-      / medium dropdown & widget
-      %li.dropdown.medium.only-icon.widget
-        %a.dropdown-toggle{:'data-toggle' => "dropdown", href: "#"}
-
-
       / dark dropdown & user menu
       %li.dropdown.dark.user-menu
         %a.dropdown-toggle{:'data-toggle' => "dropdown", href: "#"}
@@ -37,9 +27,3 @@
             = link_to destroy_user_session_path, :method => :delete do
               %i.icon-signout
               Wyloguj
-
-    / search form - hidden on phone
-    %form.navbar-form.navbar-right.hidden-xs{action: "search_results.html", method: "get"}
-      %button.btn.btn-link.icon-search{name: "button", type:"submit"}
-      .form-group
-        %input.form-control#q_header{value: "", placeholder: "Search...", autocomplete: "off", name: "q", type: "text"}

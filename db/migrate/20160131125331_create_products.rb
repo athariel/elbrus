@@ -3,11 +3,11 @@ class CreateProducts < ActiveRecord::Migration
     create_table :products do |t|
       t.string :name
       t.string :standard_measure
-      t.float :calories
-      t.float :carbohydrate
-      t.float :protein
-      t.float :fat
-      t.float :roughage
+      t.decimal :calories
+      t.decimal :carbohydrate
+      t.decimal :protein
+      t.decimal :fat
+      t.decimal :roughage
 
       t.timestamps null: false
     end
