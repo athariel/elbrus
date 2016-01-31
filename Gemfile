@@ -46,7 +46,7 @@ group :development, :test do
 end
 
 gem 'pg'
-
+gem 'devise'
 gem 'compass-rails'
 gem 'haml-rails'
 gem 'bootstrap_form'

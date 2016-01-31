@@ -1,0 +1,40 @@
+!!!
+%html
+  %head
+    %meta{:content => "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no", :name => "viewport"}/
+    %meta{:content => "text/html;charset=utf-8", "http-equiv" => "content-type"}/
+    %meta{:content => "Flat administration template for Twitter Bootstrap. Twitter Bootstrap 3 template with Ruby on Rails support.", :name => "description"}/
+
+    %title Elbrus Diet
+    = favicon_link_tag 'favicon.ico'
+    = stylesheet_link_tag 'application', :media => 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    /[if lt IE 9]
+      = javascript_include_tag 'html5shiv'
+      = javascript_include_tag 'respond'
+
+  %body.contrast-green.login.contrast-background
+    .middle-container
+      .middle-row
+        .middle-wrapper
+          .login-container-header
+            .container
+              .row
+                .col-sm-12
+                  .text-center
+          .login-container
+            .container
+              .row
+                .col-sm-4.col-sm-offset-4
+                  = yield
+          .login-container-footer
+            .container
+              .row
+                .col-sm-12
+                  .text-center
+                    = link_to new_registration_path(resource_name) do
+                      %i.icon-user
+                      New to elbrus?
+                      %strong Sign up

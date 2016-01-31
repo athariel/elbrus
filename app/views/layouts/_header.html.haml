@@ -28,10 +28,15 @@
       / dark dropdown & user menu
       %li.dropdown.dark.user-menu
         %a.dropdown-toggle{:'data-toggle' => "dropdown", href: "#"}
-          = image_tag "flatty/avatar.jpg", width: '23', height: '23', alt: "Mila Kunis"
           %span.user-name
-            Mila Kunis
+            = current_user.email
           %b.caret
+
+        %ul.dropdown-menu
+          %li
+            = link_to destroy_user_session_path, :method => :delete do
+              %i.icon-signout
+              Wyloguj
 
     / search form - hidden on phone
     %form.navbar-form.navbar-right.hidden-xs{action: "search_results.html", method: "get"}
