@@ -2,7 +2,7 @@
   Change your password
 
 = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'validate-form' }) do |f|
-  = devise_error_messages!
+  = flash_messages
   = f.hidden_field :reset_password_token
   .form-group
     .controls.with-icon-over-input

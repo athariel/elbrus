@@ -1,7 +1,7 @@
 %h1.text-center.title
   Log in
 = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: 'validate-form' }) do |f|
-  = devise_error_messages!
+  = flash_messages
   .form-group
     .controls.with-icon-over-input
       = f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'E-mail', 'data-rule-required': true
