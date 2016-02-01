@@ -3,7 +3,7 @@ class CreateMeasurements < ActiveRecord::Migration
     create_table :measurements do |t|
       t.string :name
       t.belongs_to :product, index: true, foreign_key: true
-      t.decimal :ratio
+      t.integer :weight
 
       t.timestamps null: false
     end

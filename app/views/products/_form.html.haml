@@ -1,11 +1,16 @@
 = simple_form_for @product, html: { class: "form form-horizontal product validate-form" } do |f|
 
   %fieldset
-    .col-sm-6.col-sm-offset-1
+    .col-sm-3
+      .box
+        .lead.text-grass-green
+          %i.icon-shopping-cart
+          = @product.model_name.human
+        %small.text-muted
+          Uzupełnij wartości odżywcze w 100g produktu.
+
+    .col-sm-6
       = f.input :name, input_html: {"data-rule-required": true}
-      = f.input :standard_measure, wrapper: :horizontal_input_group do
-        = f.input_field :standard_measure, class: 'form-control', "data-rule-required": true, "data-rule-number": true
-        %span.input-group-addon gram
       = f.input :calories, wrapper: :horizontal_input_group do
         = f.input_field :calories, class: 'form-control', "data-rule-required": true, "data-rule-number": true
         %span.input-group-addon kcal
@@ -21,14 +26,7 @@
       = f.input :roughage, wrapper: :horizontal_input_group do
         = f.input_field :roughage, class: 'form-control', "data-rule-number": true
         %span.input-group-addon gram
-
-    .col-sm-4.col-sm-offset-1
-      .box
-        .lead.text-grass-green
-          %i.icon-shopping-cart
-          Product
-        %small.text-muted
-          Uzupełnij wartości odżywcze
+  .col-sm-3
   .form-actions
     .row
       .col-sm-7.col-sm-offset-4

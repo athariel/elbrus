@@ -9,7 +9,8 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
+//= require jquery
+//= require jquery_ujs
 //= require flatty/jquery/jquery.min
 //= require flatty/jquery/jquery.mobile.custom.min
 //= require flatty/jquery/jquery-migrate.min

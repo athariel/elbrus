@@ -3,8 +3,29 @@ $.extend(true, $.fn.dataTable.defaults, {
     sDom: "<'row'<'col-xs-6'l><'col-xs-6'f>r>t<'row'<'col-xs-6'i><'col-xs-6'p>>",
     sPaginationType: "bootstrap",
     oLanguage: {
-        sLengthMenu: "_MENU_ records per page"
+    "sProcessing":   "Przetwarzanie...",
+    "sLengthMenu":   "Pokaż _MENU_ pozycji",
+    "sZeroRecords":  "Nie znaleziono pasujących pozycji",
+    "sInfoThousands":  " ",
+    "sInfo":         "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+    "sInfoEmpty":    "Pozycji 0 z 0 dostępnych",
+    "sInfoFiltered": "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+    "sInfoPostFix":  "",
+    "sSearch":       "Szukaj:",
+    "sUrl":          "",
+    "oPaginate": {
+        "sFirst":    "Pierwsza",
+        "sPrevious": "Poprzednia",
+        "sNext":     "Następna",
+        "sLast":     "Ostatnia"
+    },
+    "sEmptyTable":     "Brak danych",
+    "sLoadingRecords": "Wczytywanie...",
+    "oAria": {
+        "sSortAscending":  ": aktywuj, by posortować kolumnę rosnąco",
+        "sSortDescending": ": aktywuj, by posortować kolumnę malejąco"
     }
+}
 });
 
 $.extend($.fn.dataTableExt.oStdClasses, {

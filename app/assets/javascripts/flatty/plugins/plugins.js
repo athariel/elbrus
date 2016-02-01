@@ -17,7 +17,6 @@
 //= require flatty/plugins/mention/mention.min
 //= require flatty/plugins/input_mask/bootstrap-inputmask.min
 //= require flatty/plugins/fileinput/bootstrap-fileinput
-//= require flatty/plugins/retina/retina
 //= require flatty/plugins/fileupload/tmpl.min
 //= require flatty/plugins/fileupload/load-image.min
 //= require flatty/plugins/fileupload/canvas-to-blob.min

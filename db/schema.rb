@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 20160131161732) do
   create_table "measurements", force: :cascade do |t|
     t.string   "name"
     t.integer  "product_id"
-    t.decimal  "ratio"
+    t.integer  "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
