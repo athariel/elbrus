@@ -44,14 +44,14 @@ ActiveRecord::Schema.define(version: 20160131161732) do
 
   create_table "products", force: :cascade do |t|
     t.string   "name"
-    t.string   "standard_measure"
-    t.float    "calories"
-    t.float    "carbohydrate"
-    t.float    "protein"
-    t.float    "fat"
-    t.float    "roughage"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "standard_measure", default: 100
+    t.decimal  "calories"
+    t.decimal  "carbohydrate"
+    t.decimal  "protein"
+    t.decimal  "fat"
+    t.decimal  "roughage"
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
   end
 
   create_table "users", force: :cascade do |t|

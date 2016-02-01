@@ -53,6 +53,8 @@ gem 'bootstrap_form'
 gem "twitter-bootstrap-rails"
 gem 'rollbar'
 gem 'oj'
+gem "cocoon"
+gem 'simple_form'
 
 ruby "2.2.4"
 

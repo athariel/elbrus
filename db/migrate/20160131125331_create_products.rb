@@ -2,7 +2,7 @@ class CreateProducts < ActiveRecord::Migration
   def change
     create_table :products do |t|
       t.string :name
-      t.string :standard_measure
+      t.integer :standard_measure, default: 100
       t.decimal :calories
       t.decimal :carbohydrate
       t.decimal :protein

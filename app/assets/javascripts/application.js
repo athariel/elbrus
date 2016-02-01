@@ -18,3 +18,5 @@
 //= require flatty/plugins/plugins
 //= require flatty/theme
 //= require turbolinks
+//= require validation_messages
+//= require cocoon
