@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    @product.measurements.build(measurement_type: MeasurementType.gram, weight: 1)
   end
 
   # GET /products/1/edit
@@ -69,6 +70,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :standard_measure, :calories, :carbohydrate, :protein, :fat, :roughage, measurements_attributes: [:id, :name, :ratio, :_destroy])
+      params.require(:product).permit(:name, :standard_measure, :calories, :carbohydrate, :protein, :fat, :roughage, measurements_attributes: [:id, :measurement_type_id, :weight, :_destroy])
     end
 end

@@ -1,0 +1,11 @@
+.row
+  .col-sm-8
+    = f.association :measurement_type
+    = f.input :weight, wrapper: :horizontal_input_group do
+      = f.input_field :weight, class: 'form-control', "data-rule-required": true, "data-rule-number": true
+      %span.input-group-addon gram
+    %hr.hr-normal
+  .col-sm-4
+    = link_to_remove_association f,  {wrapper_class: 'row', class: 'btn btn-xs btn-danger'} do
+      %i.icon-trash
+      = t('.destroy', :default => t("helpers.links.destroy"))

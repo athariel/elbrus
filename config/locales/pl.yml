@@ -7,6 +7,7 @@ pl:
     product_id: Produkt
     dish_id: Danie
     measurement_id: Miara
+    measurement_type_id: Rodzaj miary
 
   activerecord:
     models:
@@ -31,9 +32,13 @@ pl:
         calories: Kalorie
         standard_measure: Miara podstawowa
       measurement:
-        ratio: Przelicznik
+        weight: Waga
+        measurement_type: Rodzaj
       ingredient:
         amount: Ilość
+    help:
+      measurement:
+        weight: waga w gramach
 
   date:
     formats:

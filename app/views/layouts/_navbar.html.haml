@@ -17,15 +17,3 @@
           %i.icon-food
           %span
             = Dish.model_name.human(count: 2).titleize
-
-      %li{class: "#{'active' if controller_name.to_sym.in?([:measurements])}"}
-        = link_to measurements_path do
-          %i.icon-tasks
-          %span
-            = Measurement.model_name.human(count: 2).titleize
-
-      %li{class: "#{'active' if controller_name.to_sym.in?([:ingredients])}"}
-        = link_to ingredients_path do
-          %i.icon-sitemap
-          %span
-            = Ingredient.model_name.human(count: 2).titleize

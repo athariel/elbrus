@@ -26,6 +26,24 @@
       = f.input :roughage, wrapper: :horizontal_input_group do
         = f.input_field :roughage, class: 'form-control', "data-rule-number": true
         %span.input-group-addon gram
+  %hr.hr-normal
+  %fieldset
+    .col-sm-3
+      .box
+        .lead.text-grass-green
+          %i.icon-tasks
+          = Measurement.model_name.human(count: 2)
+        %small.text-muted
+          Ustaw różne wartości miar
+    .col-sm-9
+      #measurements
+        = f.simple_fields_for :measurements do |m|
+          = render 'measurement_fields', f: m
+        = link_to_add_association f, :measurements, {class: 'btn btn-xs btn-primary'} do
+          %i.icon-plus
+          = t('.new', :default => t("helpers.links.new"))
+
+
   .col-sm-3
   .form-actions
     .row
